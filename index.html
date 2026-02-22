@@ -9,26 +9,80 @@
          This makes it easier to make new pages for your site. -->
     <link href="/style.css" rel="stylesheet" type="text/css" media="all">
   </head>
-  <body>
+
+  <style>
+    body {
+    margin: 0;
+    font-family: sans-serif;
+    background: #000000e5;
+    /* fallback */
+  }
+    .bg-container{
+      background-image: url('./img/testhomepage.webp');
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-position-x: center;
+      background-position-y: center;
+      background-attachment: fixed;
+      min-height: 100vh;
+    }
+
+    .arrows {
+      position: fixed;
+      display: block;
+      width: 10%; 
+      aspect-ratio: 1/1;
+      background-size: 100% 100%;
+      background-position: center;
+      transition: transform 0.3s;
+    }
+    #leftarrow {
+      top: 50%; 
+      left: 1%;  
+      background-image: url('./img/leftarrow.webp');
+    }
+
+    #rightarrow{
+      top: 50%; 
+      left: 89%;
+      transform: scaleX(-1);
+      background-image: url('./img/leftarrow.webp');
+    }
+
+    #uparrow{
+      top: 0%; 
+      left: 50%;
+      transform:rotate(90deg);
+      background-image: url('./img/leftarrow.webp');
+    }
+
+    #downarrow{
+      top: 82%; 
+      left: 50%;
+      transform:rotate(270deg);
+      background-image: url('./img/leftarrow.webp');
+    }
+  </style>
+
+  <body class="bg-container">
+<!--Arrows-->
+    <div>
+      <a href="planning.html" class="arrows" id="leftarrow"></a>
+    </div>
+    <div>
+      <a href="planning.html" class="arrows" id="rightarrow"></a>
+    </div>
+    <div>
+      <a href="planning.html" class="arrows" id="uparrow"></a>
+    </div>
+    <div>
+      <a href="planning.html" class="arrows" id="downarrow"></a>
+    </div>
+<!--Text-->
     <h1>Welcome to my Website!</h1>
 
-    <p>This is a 100% work in process as I learn to make this a real thing!Neocities</a>.</p>
-        <img src="images\constructioncone.webp">
-    <h2>Broad plans!</h2>
-     <ul>
-        <li>Make the main website a Tree! Links to other parts are the branches or surrounding area. Cick o</li>
-        <li>Professional side. Somehow seperate it from funsies side</li>
-        <li>Fun stuff!</li>
-        <li></li>
-     </ul>
-    
-    <h2>To do List!</h2>
-     <ul>
-        <li>Decide on what tabs to start with</li>
-        <li>learn how to make the tabs xD</li>
-        <li>Learn to do pixel art for tree!</li>
-        <li>Make a planner tab, move the to do list and broad plans there</li>
-     </ul>
-    <h2></h2> 
+      <p>This is a 100% work in process as I learn to make this a real thing!</p>
+
+    <a href="planning.html">Master Plans</a>
   </body>
 </html>
