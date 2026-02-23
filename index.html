@@ -32,7 +32,7 @@
     
     }
 
-    #transparent{
+    #transparentplan{
       /*background-image: url(img/constructioncone.webp);*/
       background-image: url(img/transparent.png);
       width: 11%;
@@ -78,7 +78,7 @@
 
   <!--cloud invis button-->
     <div>
-      <a href="planning.html" class="addons" id="transparent"></a>
+      <a href="planning.html" class="addons" id="transparentplan"></a>
     </div>
 <!--Music!-->
   <audio id="restintro" src="sound/take a rest and eat/Take some rest(Intro).wav"></audio>
@@ -87,7 +87,7 @@
 
   <label>
     <input type="checkbox" id="mute" value="yes">
-    mute
+    music
   </label>
 
   <p id="status-message"></p>
@@ -101,18 +101,15 @@
 
     checkbox.addEventListener('change', function() {
       if (this.checked) {
-      // When the checkbox is checked, play the intro music
         intro.play();
       
-      // When the intro ends, play the loop
         intro.onended = function() {
           loop.play();
         };
 
-      statusMessage.textContent = "Unmuted"; // Update status when unmuted
+      statusMessage.textContent = "Unmuted";
       } 
       else {
-      // When the checkbox is unchecked, stop the loop and play the end music
         statusMessage.textContent = "Muted";
         loop.pause();
       }
