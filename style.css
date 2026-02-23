@@ -12,6 +12,7 @@ body, html {
   height: 100%;
 }
 
+/*Universal*/
  .addons {
       position: fixed;
       display: block;
@@ -57,3 +58,9 @@ body, html {
 .hoverzoom:hover{
   transform: scale(1.05);
 }
+
+/*index*/
+
+/*Village*/
+
+/*Tavern*/

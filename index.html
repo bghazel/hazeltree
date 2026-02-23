@@ -98,7 +98,9 @@
     const end = document.getElementById('restend');
     const checkbox = document.getElementById("mute");
     const statusMessage = document.getElementById("status-message");
-
+    intro.volume = 0.05;
+    loop.volume = 0.05;
+    end.volume = 0.05;
     checkbox.addEventListener('change', function() {
       if (this.checked) {
         intro.play();
