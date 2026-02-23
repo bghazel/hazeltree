@@ -12,15 +12,48 @@ body, html {
   height: 100%;
 }
 
-.bg {
-  /* The image used */
-  background-image: url("img_girl.jpg");
+ .addons {
+      position: fixed;
+      display: block;
+      aspect-ratio: 1/1;
+      background-size: 100% 100%;
+      background-position: center;
+      transition: transform 0.3s;
+    }
 
-  /* Full height */
-  height: 100%;
+#leftarrow {
+  width: 10%; 
+  top: 50%; 
+  left: 1%;  
+  background-image: url('./img/leftarrow.webp');
+}
 
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+#rightarrow{
+  width: 10%;
+  top: 50%; 
+  left: 89%;
+  background-image: url('./img/rightarrow.webp');
+}
+
+#uparrow{
+  width: 10%;
+  top: 0%; 
+  left: 50%;
+  background-image: url('./img/uparrow.webp');
+}
+
+#downarrow{
+  width: 10%;
+  top: 82%; 
+  left: 50%;
+  background-image: url('./img/downarrow.webp');
+}
+
+.hoverzoom{
+  display:block;
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+.hoverzoom:hover{
+  transform: scale(1.05);
 }
