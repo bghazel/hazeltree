@@ -23,40 +23,69 @@
       min-height: 100vh;
     }
 
-   
-
-    
-
     #flockbird{
       width: 25%;
       top: 20%; 
       left: 12%;
+      cursor: pointer;
+      background-image: url('./img/flockbirds.gif');
     
-    
+    }
+
+    #transparent{
+      /*background-image: url(img/constructioncone.webp);*/
+      background-image: url(img/transparent.png);
+      width: 11%;
+      top: 10%; 
+      left: 83%;
+      cursor: pointer;
+    }
+
+    .center-text {
+      text-align: center;
+      position: fixed;
+      top: 50%;
+      left: 37%;
     }
   </style>
 
   <body class="bg-container">
 <!--Arrows-->
     <div>
-      <a href="map\village.html" class="addons hoverzoom" id="leftarrow"></a>
+      <a href="village.html" class="addons hoverzoom" id="leftarrow"></a>
     </div>
     <div>
-      <a href="planning.html" class="addons hoverzoom" id="rightarrow"></a>
+      <a href="not_found.html" class="addons hoverzoom" id="rightarrow"></a>
     </div>
     <div>
-      <a href="planning.html" class="addons hoverzoom" id="uparrow"></a>
+      <a href="not_found.html" class="addons hoverzoom" id="uparrow"></a>
     </div>
     <div>
-      <a href="planning.html" class="addons hoverzoom" id="downarrow"></a>
+      <a href="not_found.html" class="addons hoverzoom" id="downarrow"></a>
     </div>
 <!--Extra bits-->
-      <img src="img/flockbirds.gif" class="addons " id="flockbird">
+
+  <!--Bird HONK-->
+  <audio id="myAudio" src="sound/honk-sound.mp3" preload="auto"></audio>
+    <script>
+      function honk() {
+        var audio = document.getElementById("myAudio");
+        audio.currentTime = 0; 
+        audio.play();
+      }
+    </script>
+     <div class="addons hoverzoom" id="flockbird" onclick="honk()"></div>
+
+  <!--cloud invis button-->
+    <div>
+      <a href="planning.html" class="addons" id="transparent"></a>
+    </div>
+
 <!--Text-->
-    <h1>Welcome to my Website!</h1>
+  <div class="center-text" >
+    <h1 style=>Welcome to my Website!</h1>
+      <p style=>This is a 100% work in process as I learn to make this a real thing!</p>
+  </div>
 
-      <p>This is a 100% work in process as I learn to make this a real thing!</p>
-
-    <a href="planning.html">Master Plans</a>
-  </body>
+    </body>
 </html>
