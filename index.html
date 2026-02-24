@@ -47,6 +47,29 @@
       top: 50%;
       left: 37%;
     }
+
+    .hide-checkbox{
+      display: none;
+      width: 120px;
+      height: 100px;
+    }
+
+    .sadbard{
+      position: fixed;
+      background: url('./img/sadbard.webp') no-repeat;
+      background-size: 100% 100%;
+      display: inline-block;
+      width:120px;
+      height:160px;
+      top: 76%;
+      left: 5%;
+      cursor: pointer;
+    }
+
+    .hide-checkbox:checked + .sadbard{
+      background: url('./img/happybard.webp') no-repeat;
+      background-size: cover;
+    }
   </style>
 
   <body class="bg-container">
@@ -84,35 +107,36 @@
   <audio id="restintro" src="sound/take a rest and eat/Take some rest(Intro).wav"></audio>
   <audio id="restloop" src="sound/take a rest and eat/Take some rest (Loop).wav" loop></audio>
   <audio id="restend" src="sound/take a rest and eat/Take some rest(End).wav"></audio>
-
-  <label>
-    <input type="checkbox" id="mute" value="yes">
-    music
+  
+  <input type="checkbox" id="mute" value="yes" class="hide-checkbox">
+  <label for="mute" class="sadbard">
   </label>
 
-  <p id="status-message"></p>
 
   <script>
     const intro = document.getElementById('restintro');
     const loop = document.getElementById('restloop');
     const end = document.getElementById('restend');
     const checkbox = document.getElementById("mute");
-    const statusMessage = document.getElementById("status-message");
     intro.volume = 0.05;
     loop.volume = 0.05;
     end.volume = 0.05;
+    let i = 0;
     checkbox.addEventListener('change', function() {
       if (this.checked) {
-        intro.play();
-      
-        intro.onended = function() {
+        if(i==0){
+          intro.play();
+          i = 1;
+          intro.onended = function() {
+            loop.play();
+          };
+        }
+        else{
           loop.play();
-        };
-
-      statusMessage.textContent = "Unmuted";
-      } 
-      else {
-        statusMessage.textContent = "Muted";
+          
+        }
+      }
+      else{
         loop.pause();
       }
     });
